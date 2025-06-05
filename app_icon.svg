@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- 背景圆形 -->
+  <circle cx="512" cy="512" r="460" fill="#3498db" />
+  
+  <!-- 视频图标 -->
+  <rect x="262" y="312" width="500" height="400" rx="20" ry="20" fill="white" />
+  
+  <!-- 视频播放按钮 -->
+  <polygon points="462,412 462,612 662,512" fill="#3498db" />
+  
+  <!-- 剪刀图标 -->
+  <g transform="translate(512, 712) rotate(-30) scale(0.8)">
+    <path d="M-100,-50 L100,50 M-100,50 L100,-50" stroke="white" stroke-width="30" stroke-linecap="round" />
+    <circle cx="-100" cy="0" r="40" fill="white" />
+    <circle cx="100" cy="0" r="40" fill="white" />
+  </g>
+</svg>
