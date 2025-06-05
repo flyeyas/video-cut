@@ -71,3 +71,27 @@
 2025-06-02 19:42:25,999 - video_analyzer - INFO - 处理进度: 1/1 - 1 (154)(09).mp4
 2025-06-02 19:42:25,999 - video_analyzer - INFO - 扫描完成！成功处理 1 个视频，失败 0 个，总耗时 0.00秒
 2025-06-02 19:42:25,999 - video_analyzer - INFO - === 分析完成 ===
+2025-06-05 12:44:49,935 - video_audio_sync - INFO - Analyzing video library at /Users/flyeyas/Downloads/video
+2025-06-05 12:44:49,935 - video_analyzer - INFO - 初始化 VideoAnalyzer，数据库路径: video_library.db
+2025-06-05 12:44:49,935 - video_analyzer - INFO - 特征版本: v1.0
+2025-06-05 12:44:49,935 - video_analyzer - INFO - 支持的视频格式: .mp4, .mov, .avi, .mkv, .wmv, .flv
+2025-06-05 12:44:49,947 - video_analyzer - INFO - 数据库中现有视频记录数: 1
+2025-06-05 12:44:49,947 - video_analyzer - INFO - 数据库初始化完成，耗时: 0.01秒
+2025-06-05 12:44:49,947 - video_analyzer - INFO - 开始扫描视频库: /Users/flyeyas/Downloads/video
+2025-06-05 12:44:49,947 - video_analyzer - INFO - 正在查找视频文件...
+2025-06-05 12:44:49,997 - video_analyzer - INFO - 找到 1 个视频文件
+2025-06-05 12:44:49,998 - video_analyzer - INFO - 处理进度: 1/1 - 1 (154)(09).mp4
+2025-06-05 12:44:49,998 - video_analyzer - INFO - 扫描完成！成功处理 1 个视频，失败 0 个，总耗时 0.05秒
+2025-06-05 12:44:49,998 - video_audio_sync - INFO - Processed 1 videos
+2025-06-05 12:47:14,337 - video_audio_sync - INFO - Analyzing video library at /Users/flyeyas/Downloads/video
+2025-06-05 12:47:14,337 - video_analyzer - INFO - 初始化 VideoAnalyzer，数据库路径: video_library.db
+2025-06-05 12:47:14,337 - video_analyzer - INFO - 特征版本: v1.0
+2025-06-05 12:47:14,337 - video_analyzer - INFO - 支持的视频格式: .mp4, .mov, .avi, .mkv, .wmv, .flv
+2025-06-05 12:47:14,347 - video_analyzer - INFO - 数据库中现有视频记录数: 1
+2025-06-05 12:47:14,347 - video_analyzer - INFO - 数据库初始化完成，耗时: 0.01秒
+2025-06-05 12:47:14,348 - video_analyzer - INFO - 开始扫描视频库: /Users/flyeyas/Downloads/video
+2025-06-05 12:47:14,348 - video_analyzer - INFO - 正在查找视频文件...
+2025-06-05 12:47:14,348 - video_analyzer - INFO - 找到 1 个视频文件
+2025-06-05 12:47:14,348 - video_analyzer - INFO - 处理进度: 1/1 - 1 (154)(09).mp4
+2025-06-05 12:47:14,349 - video_analyzer - INFO - 扫描完成！成功处理 1 个视频，失败 0 个，总耗时 0.00秒
+2025-06-05 12:47:14,349 - video_audio_sync - INFO - Processed 1 videos
