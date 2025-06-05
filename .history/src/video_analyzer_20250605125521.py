@@ -28,13 +28,7 @@ logger = logging.getLogger('video_analyzer')
 def set_debug_logging():
     """启用调试级别的日志记录"""
     logger.setLevel(logging.DEBUG)
-    # 确保所有处理器也设置为DEBUG级别
-    for handler in logger.handlers:
-        handler.setLevel(logging.DEBUG)
-    # 同时设置根日志记录器
     logging.getLogger().setLevel(logging.DEBUG)
-    # 添加一条调试消息以验证调试模式已启用
-    logger.debug("调试日志级别已设置 - 这条消息只有在调试模式下才会显示")
 
 # Define supported video formats
 SUPPORTED_VIDEO_FORMATS = ['.mp4', '.mov', '.avi', '.mkv', '.wmv', '.flv']
@@ -208,9 +202,6 @@ class VideoAnalyzer:
         last_modified = datetime.fromtimestamp(file_stats.st_mtime)
         file_size = file_stats.st_size
         
-        logger.debug(f"处理视频文件: {str_path}")
-        logger.debug(f"文件大小: {file_size} 字节, 最后修改时间: {last_modified}")
-        
         # Check if video is already in the database and needs update
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
@@ -223,9 +214,6 @@ class VideoAnalyzer:
         if result:
             video_id, db_last_modified, db_feature_version = result
             db_last_modified = datetime.fromisoformat(db_last_modified)
-            
-            logger.debug(f"在数据库中找到视频记录: ID={video_id}, 特征版本={db_feature_version}")
-            logger.debug(f"数据库中的最后修改时间: {db_last_modified}, 当前特征版本: {self.current_feature_version}")
             
             # 如果视频已经处理过且特征版本相同（没有升级算法），直接跳过处理
             if db_feature_version == self.current_feature_version:
@@ -242,9 +230,7 @@ class VideoAnalyzer:
         
         # Extract metadata
         try:
-            logger.debug(f"开始提取视频元数据...")
             metadata = self._extract_video_metadata(str_path)
-            logger.debug(f"元数据提取成功: 时长={metadata['duration']}秒, 分辨率={metadata['resolution']}")
         except Exception as e:
             logger.error(f"提取元数据失败 {file_path.name}: {e}")
             conn.close()
@@ -252,7 +238,6 @@ class VideoAnalyzer:
         
         # Update or insert metadata
         if video_id:
-            logger.debug(f"更新视频元数据: ID={video_id}")
             cursor.execute('''
             UPDATE video_metadata 
             SET duration = ?, resolution = ?, file_size = ?, 
@@ -264,7 +249,6 @@ class VideoAnalyzer:
                 datetime.now().isoformat(), video_id
             ))
         else:
-            logger.debug(f"插入新视频元数据")
             cursor.execute('''
             INSERT INTO video_metadata 
             (file_path, duration, resolution, file_size, last_modified, feature_version, analyzed_at)
@@ -275,17 +259,13 @@ class VideoAnalyzer:
                 datetime.now().isoformat()
             ))
             video_id = cursor.lastrowid
-            logger.debug(f"新视频ID: {video_id}")
         
         # Extract features
         try:
-            logger.debug(f"开始提取视频特征...")
             features = self._extract_video_features(str_path)
-            logger.debug(f"特征提取成功: {', '.join(features.keys())}")
             
             # Delete existing features if any
             cursor.execute("DELETE FROM video_features WHERE video_id = ?", (video_id,))
-            logger.debug(f"已删除现有特征记录")
             
             # Insert new features
             for feature_type, feature_data in features.items():
@@ -293,7 +273,6 @@ class VideoAnalyzer:
                 INSERT INTO video_features (video_id, feature_type, feature_data)
                 VALUES (?, ?, ?)
                 ''', (video_id, feature_type, feature_data))
-                logger.debug(f"已插入特征类型: {feature_type}, 大小: {len(feature_data)} 字节")
                 
         except Exception as e:
             logger.error(f"提取特征失败 {file_path.name}: {e}")
@@ -301,7 +280,6 @@ class VideoAnalyzer:
         
         conn.commit()
         conn.close()
-        logger.debug(f"视频处理完成: {file_path.name}, ID={video_id}")
         return video_id
     
     def _extract_video_metadata(self, file_path: str) -> Dict[str, Any]:
@@ -774,18 +752,11 @@ if __name__ == "__main__":
     if args.debug:
         set_debug_logging()
         logger.info("调试模式已启用")
-        # 打印一些系统信息以验证调试模式
-        import sys
-        import platform
-        logger.debug(f"Python版本: {sys.version}")
-        logger.debug(f"系统平台: {platform.platform()}")
-        logger.debug(f"命令行参数: {sys.argv}")
 
     try:
         logger.info("=== 视频分析器启动 ===")
         logger.info(f"视频目录: {args.video_dir}")
         logger.info(f"数据库路径: {args.db_path}")
-        logger.debug(f"调试模式: {'已启用' if args.debug else '未启用'}")
 
         analyzer = VideoAnalyzer(db_path=args.db_path)
         count = analyzer.scan_video_library(args.video_dir)

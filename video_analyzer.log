@@ -95,3 +95,40 @@
 2025-06-05 12:47:14,348 - video_analyzer - INFO - 处理进度: 1/1 - 1 (154)(09).mp4
 2025-06-05 12:47:14,349 - video_analyzer - INFO - 扫描完成！成功处理 1 个视频，失败 0 个，总耗时 0.00秒
 2025-06-05 12:47:14,349 - video_audio_sync - INFO - Processed 1 videos
+2025-06-05 12:56:16,368 - video_audio_sync - INFO - Analyzing video library at /Users/flyeyas/Downloads/video
+2025-06-05 12:56:16,369 - video_analyzer - INFO - 初始化 VideoAnalyzer，数据库路径: video_library.db
+2025-06-05 12:56:16,369 - video_analyzer - INFO - 特征版本: v1.0
+2025-06-05 12:56:16,369 - video_analyzer - INFO - 支持的视频格式: .mp4, .mov, .avi, .mkv, .wmv, .flv
+2025-06-05 12:56:16,378 - video_analyzer - INFO - 数据库中现有视频记录数: 1
+2025-06-05 12:56:16,378 - video_analyzer - INFO - 数据库初始化完成，耗时: 0.01秒
+2025-06-05 12:56:16,378 - video_analyzer - INFO - 开始扫描视频库: /Users/flyeyas/Downloads/video
+2025-06-05 12:56:16,379 - video_analyzer - INFO - 正在查找视频文件...
+2025-06-05 12:56:16,379 - video_analyzer - INFO - 找到 1 个视频文件
+2025-06-05 12:56:16,379 - video_analyzer - INFO - 处理进度: 1/1 - 1 (154)(09).mp4
+2025-06-05 12:56:16,380 - video_analyzer - INFO - 扫描完成！成功处理 1 个视频，失败 0 个，总耗时 0.00秒
+2025-06-05 12:56:16,380 - video_audio_sync - INFO - Processed 1 videos
+2025-06-05 13:30:19,138 - video_analyzer - DEBUG - 调试日志级别已设置 - 这条消息只有在调试模式下才会显示
+2025-06-05 13:30:19,138 - video_audio_sync - DEBUG - 调试模式已启用
+2025-06-05 13:30:19,138 - video_audio_sync - INFO - Analyzing video library at /Users/flyeyas/Downloads/video
+2025-06-05 13:30:19,138 - video_analyzer - INFO - 初始化 VideoAnalyzer，数据库路径: video_library.db
+2025-06-05 13:30:19,138 - video_analyzer - INFO - 特征版本: v1.0
+2025-06-05 13:30:19,138 - video_analyzer - INFO - 支持的视频格式: .mp4, .mov, .avi, .mkv, .wmv, .flv
+2025-06-05 13:30:19,139 - video_analyzer - DEBUG - 连接数据库: video_library.db
+2025-06-05 13:30:19,140 - video_analyzer - DEBUG - 创建 video_metadata 表
+2025-06-05 13:30:19,147 - video_analyzer - DEBUG - 创建 video_features 表
+2025-06-05 13:30:19,147 - video_analyzer - DEBUG - 创建 feature_versions 表
+2025-06-05 13:30:19,147 - video_analyzer - DEBUG - 插入特征版本记录: v1.0
+2025-06-05 13:30:19,148 - video_analyzer - INFO - 数据库中现有视频记录数: 1
+2025-06-05 13:30:19,148 - video_analyzer - DEBUG - 数据库连接已关闭
+2025-06-05 13:30:19,148 - video_analyzer - INFO - 数据库初始化完成，耗时: 0.01秒
+2025-06-05 13:30:19,148 - video_analyzer - INFO - 开始扫描视频库: /Users/flyeyas/Downloads/video
+2025-06-05 13:30:19,149 - video_analyzer - INFO - 正在查找视频文件...
+2025-06-05 13:30:19,149 - video_analyzer - INFO - 找到 1 个视频文件
+2025-06-05 13:30:19,149 - video_analyzer - INFO - 处理进度: 1/1 - 1 (154)(09).mp4
+2025-06-05 13:30:19,149 - video_analyzer - DEBUG - 处理视频文件: /Users/flyeyas/Downloads/video/1 (154)(09).mp4
+2025-06-05 13:30:19,149 - video_analyzer - DEBUG - 文件大小: 2428552 字节, 最后修改时间: 2025-06-02 18:05:05.438013
+2025-06-05 13:30:19,149 - video_analyzer - DEBUG - 在数据库中找到视频记录: ID=1, 特征版本=v1.0
+2025-06-05 13:30:19,149 - video_analyzer - DEBUG - 数据库中的最后修改时间: 2025-06-02 18:05:05.438013, 当前特征版本: v1.0
+2025-06-05 13:30:19,150 - video_analyzer - DEBUG - 视频已处理过，跳过分析: 1 (154)(09).mp4
+2025-06-05 13:30:19,150 - video_analyzer - INFO - 扫描完成！成功处理 1 个视频，失败 0 个，总耗时 0.00秒
+2025-06-05 13:30:19,150 - video_audio_sync - INFO - Processed 1 videos
