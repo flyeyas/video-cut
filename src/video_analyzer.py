@@ -569,8 +569,8 @@ class VideoAnalyzer:
             ref_phash = self.get_video_feature(video_id, 'phash')
             ref_colorhist = self.get_video_feature(video_id, 'colorhist')
             logger.debug(f"参考视频特征获取成功，感知哈希: {len(ref_phash)} 个，颜色直方图: {len(ref_colorhist)} 个")
-        except ValueError:
-            logger.error(f"无法获取视频 ID {video_id} 的特征")
+        except Exception as e:
+            logger.error(f"无法获取视频 ID {video_id} 的特征: {e}")
             return []
 
         # Get all video IDs

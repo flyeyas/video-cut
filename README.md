@@ -103,6 +103,18 @@ python src/video_audio_sync.py compose --audio /path/to/audio.mp3 --output outpu
 python src/video_audio_sync.py compose --duration 60.0 --output output.mp4 --export-draft --draft-dir ./drafts
 ```
 
+### 5. 随机选择视频素材
+
+根据指定时长从源目录随机选择视频素材并复制到目标目录：
+
+```bash
+python src/random-video-selector.py -s /path/to/source -t /path/to/target -d 60
+```
+
+可选参数：
+- `-f`：指定允许的视频格式（如 `-f mp4 mov`）
+- `-e`：设置最大误差比例（默认0.05，即5%）
+
 ## 命令行参数
 
 ### 通用参数
